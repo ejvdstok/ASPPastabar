@@ -1,0 +1,38 @@
+﻿@model List<Pasta>
+@{
+    ViewData["Title"] = "Mandje";
+}
+
+<h1>Overzicht bestellingen</h1>
+@{
+    if (Model != null)
+    {
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <td>@Html.DisplayNameFor(m => m.First().Soort)</td>
+                <td>@Html.DisplayNameFor(m => m.First().Grootte)</td>
+                <td>@Html.DisplayNameFor(m => m.First().Saus)</td>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var Pasta in Model)
+            {
+                <tr>
+                    <td>@Html.DisplayFor(m => Pasta.Soort)</td>
+                    <td>@Html.DisplayFor(m => Pasta.Grootte)</td>
+                    <td>@Html.DisplayFor(m => Pasta.Saus)</td>
+
+                </tr>
+             }
+
+            <tr>
+            <td>
+                <input type="submit" value="Bestelling(en) doorsturen" class="btn btn-primary" />
+            </td>
+             </tr>
+
+            </tbody>
+    </table>
+    }
+}

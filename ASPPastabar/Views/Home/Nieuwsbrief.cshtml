@@ -1,0 +1,37 @@
+﻿@model Persoon
+@{
+    ViewData["Title"] = "Nieuwsbrief";
+}
+
+<h1>Schrijf hier in voor onze niewsbrief</h1>
+<form asp-action="Nieuwsbrief" method="post">
+    <div>
+        <label asp-for="Naam"></label>
+        <span asp-validation-for="Naam">*</span>
+        <input asp-for="Naam" />
+    </div>
+    <div>
+        <label asp-for="Voornaam"></label>
+        <span asp-validation-for="Voornaam">*</span>
+        <input asp-for="Voornaam" />
+    </div>
+    <div>
+        <label asp-for="Email"></label>
+        <span asp-validation-for="Email">*</span>
+        <input asp-for="Email" />
+    </div>
+    <div>
+        <label asp-for="Telefoon"></label>
+        <span asp-validation-for="Telefoon">*</span>
+        <input asp-for="Telefoon" />
+    </div>
+    <div>
+        <label asp-for="Geboortedatum"></label>
+        <span asp-validation-for="Geboortedatum">*</span>
+        <input asp-for="Geboortedatum" />
+    </div>
+    <div>
+        <input type="submit" value="Inschrijven" class="btn btn-success" />
+    </div>
+        <div asp-validation-summary="All">Vul volgende velden correct in:</div>
+</form>
